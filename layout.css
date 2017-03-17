@@ -1,6 +1,5 @@
 .hamburger {
   float: right;
-  visibility: visible;
 }
 
 #nav-section {
@@ -31,14 +30,4 @@
 .page-subtitle {
   clear: left;
   float: left;
-}
-
-@media screen and (min-width: 640px) {
-  .hamburger {
-  visibility: hidden;
-  }
-
-  ul {
-    display: block;
-  }
 }
