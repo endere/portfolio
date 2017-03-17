@@ -10,7 +10,7 @@ var projectData = [
   },
 
   {
-    title: 'time-wizards',
+    title: 'Fracture',
     link: 'https://kurtrm.github.io/time-wizards/',
     description: 'This was a final project for our first course at Code Fellows. We worked on a multi-page web RPG that implemented the skills and knowledge we learned throught our time in the 201 course.',
     contributors: ['Danny', 'Michael', 'Brianna', 'Glen'],

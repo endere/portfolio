@@ -15,18 +15,24 @@ function Project (props) {
 Project.prototype.toHtml = function() {
   //Create a template in the html for this stuff!
   //Needs: .template data-''
-  var $newProject = $('article.template').clone().removeClass('template');
+  // var $newProject = $('article.template').clone().removeClass('template');
 
   // $newProject.attr('', this.);
+  $('.template').hide();
+  var source = $('#project-template').html();
+  var templateRender = Handlebars.compile(source);
 
-  $newProject.find('.title').text(this.title);
-  $newProject.find('.link').attr('href', this.link);
-  $newProject.find('.description').text(this.description);
-  // $newProject.find('.contributors').html(this.contributors);
-  // $newProject.find('').attr('datetime', this.);
-  $('#projects').css('background-image' , this.image);
-  // $newProject.find('').text('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  return $newProject;
+  // $newProject.find('.title').text(this.title);
+  // $newProject.find('.link').attr('href', this.link);
+  // $newProject.find('.description').text(this.description);
+  // // $newProject.find('.contributors').html(this.contributors);
+  // // $newProject.find('').attr('datetime', this.);
+  // $('#projects').css('background-image' , this.image);
+  // // $newProject.find('').text('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+  // return $newProject;
+
+  return templateRender(this);
+
 };
 
 // projectData.sort(function(a,b) {
@@ -35,7 +41,6 @@ Project.prototype.toHtml = function() {
 
 projectData.forEach(function(ele) {
   allProjects.push(new Project(ele));
-  console.table(allProjects);
 });
 
 allProjects.forEach(function(a){
