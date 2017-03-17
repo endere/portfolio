@@ -33,6 +33,10 @@ Project.prototype.toHtml = function() {
 
   return templateRender(this);
 
+  $('#projects').on('click', function() {
+    console.log(this.link);
+    // window.location.href = a.link;
+  });
 };
 
 // projectData.sort(function(a,b) {
