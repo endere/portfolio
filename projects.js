@@ -29,6 +29,17 @@ Project.prototype.toHtml = function() {
   return $newProject;
 };
 
+projectView = {};
+
+projectView.handleMainNav = function() {
+  $('.site-navigation').on('click', '.tab', function(e) {
+    $('.content').hide();
+    $('#' + $(this).data('content')).fadeIn();
+  });
+
+  // $('.site-navigation .tab:first').click();
+};
+
 // projectData.sort(function(a,b) {
 //   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 // });
@@ -42,3 +53,5 @@ allProjects.forEach(function(a){
   //projects id for where to put them.
   $('#projects').append(a.toHtml());
 });
+
+projectView.handleMainNav();
