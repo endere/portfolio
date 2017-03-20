@@ -1,10 +1,10 @@
 .hamburger {
-   visibility: visible;
+   display: block;
  }
 
  @media screen and (min-width: 640px) {
    .hamburger {
-   visibility: hidden;
+   display: none;
    }
 
    ul {
