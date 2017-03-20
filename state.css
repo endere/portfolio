@@ -1,0 +1,17 @@
+.hamburger {
+   display: block;
+ }
+
+ @media screen and (min-width: 640px) {
+   .hamburger {
+   display: none;
+   }
+
+ul {
+     display: block;
+   }
+
+article {
+min-height: 250px;
+ }
+}
