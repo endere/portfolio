@@ -10,4 +10,8 @@
 ul {
      display: block;
    }
+
+article {
+min-height: 250px;
  }
+}
