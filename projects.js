@@ -23,9 +23,25 @@ projectView = {};
 projectView.handleMainNav = function() {
   $('.site-navigation').on('click', '.tab', function(e) {
     $('.content').hide();
+    console.log($(this).attr('data-content'));
     $('#' + $(this).data('content')).fadeIn();
+    if ($(this).attr('data-content') === 'projects') {
+      console.log('if statement has been called');
+      $('.template').fadeIn();
+    }
   });
 
+};
+
+projectView.handleProjectSelection = function() {
+  //Hide any children elements beyond the second element.
+  $('.template *:nth-of-type(n+2)').hide();
+
+  $('.template').on('click', function(e) {
+    e.preventDefault();
+    $('.template').hide();
+    $(this).fadeIn();
+  });
 };
 
 projectData.forEach(function(ele) {
@@ -38,3 +54,4 @@ allProjects.forEach(function(a){
 });
 
 projectView.handleMainNav();
+projectView.handleProjectSelection();

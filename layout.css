@@ -1,5 +1,6 @@
-.hamburger {
-}
+/*.hamburger:hover + ul {
+  display: block;
+}*/
 
 header {
   position: relative;
