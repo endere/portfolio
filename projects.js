@@ -11,19 +11,16 @@ function Project (props) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone().removeClass('template');
 
-  $newProject.find('.title').text(this.title);
-  $newProject.find('.link').attr('href', this.link);
-  $newProject.find('.description').text(this.description);
-  $('#projects').css('background-image' , this.image);
-  return $newProject;
+  var source = $('#project-template').html();
+  var templateRender = Handlebars.compile(source);
+
+  return templateRender(this);
 };
 
 projectView = {};
 
 projectView.handleMainNav = function() {
-  $('.template').hide();
   $('.site-navigation').on('click', '.tab', function(e) {
     $('.content').hide();
     $('#' + $(this).data('content')).fadeIn();

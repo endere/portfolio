@@ -1,0 +1,18 @@
+.hamburger {
+   width: 8%;
+ }
+
+ body > header {
+   background-color: darkorange;
+ }
+
+ .hamburger-slice {
+   width: 100%;
+   height: 1vw;
+   background-color: black;
+   margin: 6px 0;
+ }
+
+ nav {
+   display: inline-block;
+ }
