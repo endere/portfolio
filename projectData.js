@@ -6,7 +6,7 @@ var projectData = [
     link: 'https://kurtrm.github.io/Salmon-Cookies/',
     description: 'This is a silly project that I worked on during my time at Code Fellows. I learned to use raw DOM manipulation in order to display data in a table useful to an imaginary business.',
     contributors: '',
-    image: 'http://placekitten.com/g/200/300',
+    image: 'images/Croppedone.png',
   },
 
   {

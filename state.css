@@ -1,5 +1,6 @@
 .hamburger {
    display: block;
+   width: 8%;
  }
 
  @media screen and (min-width: 640px) {

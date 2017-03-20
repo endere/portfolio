@@ -19,7 +19,7 @@ Project.prototype.toHtml = function() {
 };
 
 projectView = {};
-
+var navFlag = false;
 projectView.handleMainNav = function() {
   $('.site-navigation').on('click', '.tab', function(e) {
     $('.content').hide();
@@ -27,17 +27,24 @@ projectView.handleMainNav = function() {
     if ($(this).attr('data-content') === 'projects') {
       $('.template').fadeIn();
     }
+    navFlag = false;
   });
-
+};
+projectView.handleBurger = function() {
+  $('.hamburger').on('click', function(){
+    $('.site-navigation > ul').show();
+  });
 };
 
 projectView.handleProjectSelection = function() {
   $('.template *:nth-of-type(n+2)').hide();
-
   $('.template').on('click', function(e) {
     e.preventDefault();
-    $('.template').hide();
-    $(this).fadeIn();
+    if (navFlag === false){
+      $('.template').hide();
+      $(this).fadeIn();
+      navFlag = true;
+    }
   });
 };
 
@@ -49,6 +56,6 @@ projectData.forEach(function(ele) {
 allProjects.forEach(function(a){
   $('#projects').append(a.toHtml());
 });
-
+projectView.handleBurger();
 projectView.handleMainNav();
 projectView.handleProjectSelection();
